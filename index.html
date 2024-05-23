@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="nav-bar">
+        <h2>News-Update</h2>
+
+        <!-- Navigation links -->
+        <div class="links">
+                <div class="hover-link header-item" id="home" onclick="topicsclicked('general')">Home</div>
+                <div class="hover-link header-item" id="business" onclick="topicsclicked(' business')">Business</div>
+                <div class="hover-link header-item" id="entertainment" onclick="topicsclicked('entertainment')">Entertainment</div>
+                <div class="hover-link header-item" id="general" onclick="topicsclicked(' general ')">General</div>
+                <div class="hover-link header-item" id="health" onclick="topicsclicked(' health ')">Health</div>
+                <div class="hover-link header-item" id="science" onclick="topicsclicked(' science ')">Science</div>
+                <div class="hover-link header-item" id="sports" onclick="topicsclicked(' sports ')">Sports</div>
+                <div class="hover-link header-item" id="technology" onclick="topicsclicked(' technology ')">Technology</div>
+        </div>
+
+        <div class="search-bar">
+            <input id ="search-text" type="text" class="news-input" placeholder="Search">
+            <button id="search-button" class="search-btn">Search</button>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <h1>News-Update</h1>
+
+    <main>
+        <div class="news-cards" id="news-cards">
+            
+        </div>
+    </main>
+
+    <!-- Template for news card -->
+    <template id= "template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img id="news-img" src="https://via.placeholder.com/400x200" alt="">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the title</h3>
+                <h6 id="news-source" class="news-source">End Gadget 26/08/2023</h6>
+                <p  id="news-desc" class="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis omnis autem molestiae totam ad asperiores obcaecati commodi voluptate eos magnam!</p>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
