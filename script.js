@@ -7,9 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     async function fetchNews(query) {
-        const response = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
-        const data = await response.json();
-        bindData(data.articles);
+        const newsCards = document.getElementById("news-cards");
+        newsCards.innerHTML = "<p>Loading...</p>";
+
+        try {
+            const response = await fetch(`${apiUrl}${query}&apiKey=${apiKey}`);
+            const data = await response.json();
+            bindData(data.articles);
+        } catch (error) {
+            newsCards.innerHTML = "<p>Error fetching data</p>";
+            console.error("Error fetching data:", error);
+        }
     }
     
     // Function to bind news data to the DOM
